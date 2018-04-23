@@ -21,7 +21,7 @@ Game.Level3.prototype={
 		 player.animations.add('dead',Phaser.Animation.generateFrameNames('Dead',1,10),10,true);
 	
 
-		text=this.add.text(this.world.x,this.world.y,"Create an object 'p'of Player class,\n(for example x=new Player();)",{font:'32px Arial',fill:'#000000',align:'left'});
+		text=this.add.text(this.world.x,this.world.y,"Create an object 'p'of Player class,\n(for example x = new Player();  Don't forget to add the semicolon in the end of your statments)",{font:'32px Arial',fill:'#000000',align:'left'});
 		text2=this.add.text(this.world.x+400,this.world.y+10,"Congrats, you have created the pumpkin player",{font:'16px Arial',fill:'#000000',align:'left'});	
 		text3=this.add.text(this.world.x,this.world.y,"Let us try that again",{font:'32px Arial',fill:'#000000'});
 		text2.visible=false;
@@ -57,7 +57,7 @@ Game.Level3.prototype={
             submitBtn.input.useHandCursor = true;
             submitBtn.events.onInputUp.add(function(){
             	answer=input2.value;
-            		if(answer==="p=new Player();"){
+            		if(answer==="p = new Player();"){
             			text3.visible=false;
 
 
@@ -72,7 +72,7 @@ Game.Level3.prototype={
 		
 player.animations.play('run');
 
-text2.text="Look at me run!";
+// text2.text="Look at me run!";
 text.text="Using the same way, add behavior jump and behavior die";
 text3.visible=false;
 				
@@ -93,9 +93,9 @@ text3.visible=false;
 		}
 	
             });
-		Fabrique.Plugins.InputField.onKeyboardOpen.add(function () {
-                console.error("keyboard open", Fabrique.Plugins.InputField.KeyboardOpen)
-                  });
+PhaserInput.onKeyboardClose.addOnce(function() {
+    this.resizeBackgroundImage();
+});
 
 	},
 

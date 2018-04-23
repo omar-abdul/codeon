@@ -12,7 +12,7 @@ Game.Boot.prototype={
 
 	init:function(){
 		
-		this.add.plugin(Fabrique.Plugins.InputField);
+		this.add.plugin(PhaserInput.Plugin);
 
 
 			this.input.maxPointers=2;

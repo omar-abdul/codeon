@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>CodeOn Game</title>
+ 
+    <!-- Load Phaser engine -->
+    <script src="lib/phaser.js"></script>
+ 
+    <script src="lib/phaser-input.js"></script>
+
+    <!-- Load game source files -->
+    
+     <script src="src/Boot.js"></script>
+     
+   
+    <script src="src/Preloader.js"></script>
+     <script src="src/MainMenu.js"></script>
+    <script src="src/Level1.js"></script>
+    <script src="src/Highscore.js"></script>
+    <script src="src/Level2.js"></script>
+     <script src="src/Level3.js"></script>
+
+    <!-- Load game entrance -->
+    
+    <!-- Load and initialize Cordova -->
+   
+</head>
+<body>
+    <!-- Main canvas for rendering game stage -->
+    <div id="game"></div>
+    <script type="text/javascript">
+    var game = new Phaser.Game(800, 480, Phaser.AUTO, 'game');
+
+game.state.add('Boot', Game.Boot);
+
+game.state.add('Preloader', Game.Preloader);
+game.state.add('MainMenu', Game.MainMenu);
+game.state.add('Level1', Game.Level1);
+game.state.add('Level2',Game.Level2);
+game.state.add('Level3',Game.Level3);
+
+game.state.add('Highscore',Game.Highscore);
+
+
+
+
+
+
+game.state.start('Boot');
+
+
+
+    </script>
+</body>
+</html>
